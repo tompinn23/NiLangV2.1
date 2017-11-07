@@ -14,4 +14,30 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <Flex Include="lexer.l">
+      <Filter>Source Files</Filter>
+    </Flex>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tokens.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlexLexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="grammar.y">
+      <Filter>Source Files</Filter>
+    </Bison>
+  </ItemGroup>
 </Project>
