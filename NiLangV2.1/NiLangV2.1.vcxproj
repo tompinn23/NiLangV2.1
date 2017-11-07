@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.props" Condition="Exists('..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.props')" />
+  <Import Project="..\packages\Llvm.Libs.targets.x86-Release.5.0.0\build\native\Llvm.Libs.targets.x86-Release.props" Condition="Exists('..\packages\Llvm.Libs.targets.x86-Release.5.0.0\build\native\Llvm.Libs.targets.x86-Release.props')" />
+  <Import Project="..\packages\Llvm.Libs.targets.x86-Debug.5.0.0\build\native\Llvm.Libs.targets.x86-Debug.props" Condition="Exists('..\packages\Llvm.Libs.targets.x86-Debug.5.0.0\build\native\Llvm.Libs.targets.x86-Debug.props')" />
+  <Import Project="..\packages\Llvm.Libs.targets.x64-Release.5.0.0\build\native\Llvm.Libs.targets.x64-Release.props" Condition="Exists('..\packages\Llvm.Libs.targets.x64-Release.5.0.0\build\native\Llvm.Libs.targets.x64-Release.props')" />
+  <Import Project="..\packages\Llvm.Libs.targets.x64-Debug.5.0.0\build\native\Llvm.Libs.targets.x64-Debug.props" Condition="Exists('..\packages\Llvm.Libs.targets.x64-Debug.5.0.0\build\native\Llvm.Libs.targets.x64-Debug.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.x86-Release.5.0.0\build\native\Llvm.Libs.core.x86-Release.props" Condition="Exists('..\packages\Llvm.Libs.core.x86-Release.5.0.0\build\native\Llvm.Libs.core.x86-Release.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.x86-Debug.5.0.0\build\native\Llvm.Libs.core.x86-Debug.props" Condition="Exists('..\packages\Llvm.Libs.core.x86-Debug.5.0.0\build\native\Llvm.Libs.core.x86-Debug.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.x64-Release.5.0.0\build\native\Llvm.Libs.core.x64-Release.props" Condition="Exists('..\packages\Llvm.Libs.core.x64-Release.5.0.0\build\native\Llvm.Libs.core.x64-Release.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.x64-Debug.5.0.0\build\native\Llvm.Libs.core.x64-Debug.props" Condition="Exists('..\packages\Llvm.Libs.core.x64-Debug.5.0.0\build\native\Llvm.Libs.core.x64-Debug.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.pdbs.x86-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x86-Debug.props" Condition="Exists('..\packages\Llvm.Libs.core.pdbs.x86-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x86-Debug.props')" />
+  <Import Project="..\packages\Llvm.Libs.core.pdbs.x64-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x64-Debug.props" Condition="Exists('..\packages\Llvm.Libs.core.pdbs.x64-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x64-Debug.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -17,6 +28,22 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Flex Include="lexer.l" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FlexLexer.h" />
+    <ClInclude Include="tokens.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lexer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="grammar.y" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -54,6 +81,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\..\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -146,9 +174,26 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\..\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.targets" />
+    <Import Project="..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets" Condition="Exists('..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.pdbs.x64-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x64-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.pdbs.x64-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x64-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.pdbs.x86-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x86-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.pdbs.x86-Debug.5.0.0\build\native\Llvm.Libs.core.pdbs.x86-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.x64-Debug.5.0.0\build\native\Llvm.Libs.core.x64-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.x64-Debug.5.0.0\build\native\Llvm.Libs.core.x64-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.x64-Release.5.0.0\build\native\Llvm.Libs.core.x64-Release.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.x64-Release.5.0.0\build\native\Llvm.Libs.core.x64-Release.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.x86-Debug.5.0.0\build\native\Llvm.Libs.core.x86-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.x86-Debug.5.0.0\build\native\Llvm.Libs.core.x86-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.core.x86-Release.5.0.0\build\native\Llvm.Libs.core.x86-Release.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.core.x86-Release.5.0.0\build\native\Llvm.Libs.core.x86-Release.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.targets.x64-Debug.5.0.0\build\native\Llvm.Libs.targets.x64-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.targets.x64-Debug.5.0.0\build\native\Llvm.Libs.targets.x64-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.targets.x64-Release.5.0.0\build\native\Llvm.Libs.targets.x64-Release.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.targets.x64-Release.5.0.0\build\native\Llvm.Libs.targets.x64-Release.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.targets.x86-Debug.5.0.0\build\native\Llvm.Libs.targets.x86-Debug.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.targets.x86-Debug.5.0.0\build\native\Llvm.Libs.targets.x86-Debug.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.targets.x86-Release.5.0.0\build\native\Llvm.Libs.targets.x86-Release.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.targets.x86-Release.5.0.0\build\native\Llvm.Libs.targets.x86-Release.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.props'))" />
+    <Error Condition="!Exists('..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets'))" />
+  </Target>
 </Project>

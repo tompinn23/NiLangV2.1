@@ -1,0 +1,40 @@
+#ifndef TOKENS_H
+#define TOKENS_H
+
+enum Tokens
+{
+	DEF = 257,
+	RETURN,
+	CLASS,
+	IF,
+	PUB,
+	ELSE,
+	ELIF,
+	SWITCH,
+	CASE,
+	THIS,
+	OVERRIDE,
+	EXTENDS,
+	IMPLEMENTS,
+	INTERFACE,
+	TYPE,
+
+	MINUSEQ,
+	PLUSEQ,
+	MULEQ,
+	DIVEQ,
+	EQEQ,
+	NE,
+	LE,
+	GE,
+	ANDAND,
+	OROR,
+
+	IDENT,
+	END_STATEMENT,
+};
+
+
+
+#endif // !TOKENS_H
+
