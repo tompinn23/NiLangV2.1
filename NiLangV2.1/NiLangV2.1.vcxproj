@@ -40,9 +40,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lexer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <Bison Include="grammar.y" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

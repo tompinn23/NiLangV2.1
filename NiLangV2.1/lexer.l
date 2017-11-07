@@ -10,7 +10,7 @@ using namespace std;;
 %option yylineno
 %option stack
 %option noyywrap
-%option outfile="lexer.cpp"
+%option outfile="lexer.cc"
 
 
 nums [0-9]+
@@ -69,7 +69,7 @@ type { return TYPE; }
 	return INT;
 }
 
-{nums}+\.+{nums}
+[0-9]+\.[0-9]*
 {
 	yylval.dub = atof(yytext);
 	return DOUBLE;
