@@ -1,6 +1,4 @@
 %{
-#include <ctype.h>
-#include <stdio.h>
 #include <iostream>
 #include <fstream>
 #include "tokens.h"
@@ -12,9 +10,9 @@ using namespace std;;
 %option noyywrap
 %option outfile="lexer.cc"
 
-
 nums [0-9]+
 ident [a-zA-Z][a-zA-Z0-9]+
+string  \"[^\n"]+\"
 
 
 %%
@@ -41,6 +39,14 @@ type { return TYPE; }
 
 ; { return END_STATEMENT; }
 
+true { yylval.bol = true;
+	return BOOL;
+}
+
+false { yylval.bol = false;
+	return BOOL;
+}
+
 
 -    { return '-'; }
 -= { return MINUSEQ; }
@@ -65,12 +71,11 @@ type { return TYPE; }
 \| { return '|'; }
 
 {nums} {
-	yylval.num = atol(yytext);
+	yylval.num = atoi(yytext);
 	return INT;
 }
 
-[0-9]+\.[0-9]*
-{
+[0-9]+\.[0-9]* {
 	yylval.dub = atof(yytext);
 	return DOUBLE;
 }
@@ -78,7 +83,14 @@ type { return TYPE; }
 {ident} {
 	yylval.str = strdup(yytext);
 	return IDENTIFIER;
-	}
+}
+
+{string} {
+	yylval.str = strdup(yytext);
+	return STRING;
+}
+
+
 
 
 
@@ -86,18 +98,3 @@ type { return TYPE; }
 
 %%
 
-
-
-int main(int, char**) {
-	FILE *myfile = fopen("test.ni", "r");
-	if(!myfile)
-	{
-		cerr << "Couldn't open file" << endl;
-		perror("test.ni");
-		return -1;
-	}
-	yyin = myfile;
-	// lex through the input:
-	yylex();
-	
-}

@@ -30,24 +30,29 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Flex Include="lexer.l" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FlexLexer.h" />
+    <ClInclude Include="ast\AST.h" />
+    <ClInclude Include="ast\ASTBaseNode.h" />
+    <ClInclude Include="ast\ASTTypes.h" />
     <ClInclude Include="tokens.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="parsing\grammar.y" />
+    <None Include="parsing\lexer.ll" />
   </ItemGroup>
   <ItemGroup>
-    <Bison Include="grammar.y" />
+    <ClCompile Include="ast\AST.cc" />
+    <ClCompile Include="main.cc" />
+    <ClCompile Include="parsing\lexer.cc" />
+    <ClCompile Include="Visitor.cc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{441065ED-A7B3-44A9-8DF8-34DD0185C68E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>NiLangV21</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,9 +82,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <ImportGroup Label="ExtensionSettings">
-    <Import Project="..\..\..\..\..\..\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.props" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -100,6 +103,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\GnuWin32\include;C:\LLVM\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\LLVM\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -134,6 +139,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PreBuildEvent>
+      <Command>call pre-build.bat</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -172,10 +180,7 @@
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\..\..\..\..\..\win_flex_bison\custom_build_rules\win_flex_bison_custom_build.targets" />
-    <Import Project="..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets" Condition="Exists('..\packages\Llvm.Libs.5.0.0\build\native\Llvm.Libs.targets')" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

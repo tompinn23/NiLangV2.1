@@ -30,8 +30,13 @@ enum Tokens
 	ANDAND,
 	OROR,
 
-	IDENT,
+	IDENTIFIER,
 	END_STATEMENT,
+
+	INT,
+	DOUBLE,
+	STRING,
+	BOOL
 };
 
 

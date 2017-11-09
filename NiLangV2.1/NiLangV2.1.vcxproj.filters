@@ -15,24 +15,43 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Flex Include="lexer.l">
-      <Filter>Source Files</Filter>
-    </Flex>
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="tokens.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlexLexer.h">
+    <ClInclude Include="Visitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ast\AST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ast\ASTBaseNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ast\ASTTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="parsing\grammar.y">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="parsing\lexer.ll">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Bison Include="grammar.y">
+    <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
-    </Bison>
+    </ClCompile>
+    <ClCompile Include="Visitor.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ast\AST.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parsing\lexer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
