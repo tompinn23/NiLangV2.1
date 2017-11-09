@@ -9,7 +9,7 @@ Before we dig in here are some handy repository to check out:
 
 ## Introduction
 
-Right so here we are and you wanna build NiLang well ngl it kinda takes the piss and is only tested on Windows 7/ 10 Visual Studio 2017 Community Edition 64bit.\
+Right so here we are and you wanna build NiLang well ngl it kinda takes the piss and is only tested on Windows 7/ 10 Visual Studio 2017 Community Edition 64bit.
 
 ### Dependencies
 * LLVM 5.0.0
