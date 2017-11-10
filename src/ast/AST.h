@@ -5,7 +5,7 @@
 
 #include "ASTBaseNode.h"
 #include "ASTTypes.h"
-#include "../Visitor.h"
+#include "../codegen/Visitor.h"
 
 
 namespace AST

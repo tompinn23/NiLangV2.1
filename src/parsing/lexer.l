@@ -1,14 +1,18 @@
 %{
 #include <iostream>
 #include <fstream>
+#include <string>
+#include "grammar.tab.hh"
 #include "tokens.h"
 using namespace std;;
+
+extern YYSTYPE yylval;
 %}
 
 %option yylineno
 %option stack
 %option noyywrap
-%option outfile="lexer.cc"
+%option outfile="lexer.c"
 
 nums [0-9]+
 ident [a-zA-Z][a-zA-Z0-9]+
@@ -81,12 +85,12 @@ false { yylval.bol = false;
 }
 
 {ident} {
-	yylval.str = strdup(yytext);
+	yylval.str = std::string(yytext);
 	return IDENTIFIER;
 }
 
 {string} {
-	yylval.str = strdup(yytext);
+	yylval.str = std::string(yytext);
 	return STRING;
 }
 
