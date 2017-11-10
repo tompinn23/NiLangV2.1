@@ -1,4 +1,4 @@
 cd parsing
-win_flex --wincompat lexer.ll 
-win_bison -d grammar.y -o grammar.tab.cc
+win_flex --wincompat lexer.l 
+win_bison -d -o parser.cc grammar.y 
 pause
