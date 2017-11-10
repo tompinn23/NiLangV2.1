@@ -37,6 +37,7 @@ Currently linux support is sketchy / non-existent. I currently don't have a linu
 
 Theres also no build system set up other than visual studio. I do plan to setup a cross platform build tool but it hasn't occured yet. Therefore your gonna have to compile everything manually. It should be straight forward as the only thing you need to link is LLVM so have a go if you want.
 
+CMAKE COMING SOON!
 
 ## License
 
