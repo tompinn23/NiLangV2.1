@@ -1,2 +1,0 @@
-C:/Users/Tom/Desktop/NilangV2.1/src/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Tom/Desktop/NilangV2.1/src/build/CMakeFiles/ZERO_CHECK.dir
