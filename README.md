@@ -34,3 +34,8 @@ LLVM takes a really long time and uses about 15gb of space on your hardrive to c
 Currently linux support is sketchy / non-existent. I currently don't have a linus os running so I can't test whether it works. Im 67% sure it should work as long as you have LLVM, Bison and Flex installed/built. But it is untested.
 
 Theres also no build system set up other than visual studio. I do plan to setup a cross platform build tool but it hasn't occured yet. Therefore your gonna have to compile everything manually. It should be straight forward as the only thing you need to link is LLVM so have a go if you want.
+
+
+## License
+
+Nilang V2.1 is released under the GNU GPL V3 license. Which can be found [here](https://www.gnu.org/licenses/gpl-3.0.en.html)
