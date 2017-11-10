@@ -24,6 +24,8 @@ To obtain LLVM 5.0.0 go [here](https://llvm.org/docs/GettingStartedVS.html) and 
 To obtain flex and bison I recommend installing chocolatey from [here](https://chocolatey.org/install).  
 Then run ```choco install winflexbison3```
 
+You don't need to install flex or bison if you don't plan on making any changes to the lexer or parser.
+
 You should then be able to compile lexer.ll and grammar.y before building in visual studio.
 
 ###### Warning!
