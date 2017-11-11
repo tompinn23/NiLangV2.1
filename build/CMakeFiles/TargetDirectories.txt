@@ -1,7 +1,0 @@
-C:/Users/Tom/Desktop/NilangV2.1/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/ast/CMakeFiles/NilangAST.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/codegen/CMakeFiles/NilangCodegen.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/driver/CMakeFiles/nilang.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/parsing/CMakeFiles/generate_lexbison.dir
-C:/Users/Tom/Desktop/NilangV2.1/build/parsing/CMakeFiles/NilangParsing.dir
