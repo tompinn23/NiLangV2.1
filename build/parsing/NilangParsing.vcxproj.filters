@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Tom\Desktop\NilangV2.1\build\parsing\lexer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tom\Desktop\NilangV2.1\build\parsing\parser.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tom\Desktop\NilangV2.1\parsing\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Tom\Desktop\NilangV2.1\build\CMakeFiles\321936b41a873bd22404537be2d2d8a0\lexer.cc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Tom\Desktop\NilangV2.1\build\CMakeFiles\e579fffe509a556099723cdaa59a9b5c\parser.hh.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{503FC27C-E41B-384E-BDE0-B75F8B7FFCE5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A9D813AB-092A-3F0B-BBD8-D727B9F4F75C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+add_library(NilangAST AST.cc)
