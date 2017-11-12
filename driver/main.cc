@@ -1,6 +1,6 @@
 /* Main Entry Point */
 #include <iostream>
-#include "llvm\IR\Module.h"
+#include "llvm/IR/Module.h"
 #include <algorithm>
 using namespace llvm;
 using namespace std;

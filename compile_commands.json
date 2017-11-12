@@ -1,27 +1,27 @@
 [
 {
   "directory": "/home/tom/NiLangV2.1/build/ast",
-  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/include -I/home/tom/NiLangV2.1/C:/LLVM/include    -o CMakeFiles/NilangAST.dir/AST.cc.o -c /home/tom/NiLangV2.1/ast/AST.cc",
+  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/llvm/include -I/home/tom/NiLangV2.1/llvm/build/include -I/home/tom/NiLangV2.1/include    -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++11 -o CMakeFiles/NilangAST.dir/AST.cc.o -c /home/tom/NiLangV2.1/ast/AST.cc",
   "file": "/home/tom/NiLangV2.1/ast/AST.cc"
 },
 {
   "directory": "/home/tom/NiLangV2.1/build/codegen",
-  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/include -I/home/tom/NiLangV2.1/C:/LLVM/include    -o CMakeFiles/NilangCodegen.dir/Visitor.cc.o -c /home/tom/NiLangV2.1/codegen/Visitor.cc",
+  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/llvm/include -I/home/tom/NiLangV2.1/llvm/build/include -I/home/tom/NiLangV2.1/include    -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++11 -o CMakeFiles/NilangCodegen.dir/Visitor.cc.o -c /home/tom/NiLangV2.1/codegen/Visitor.cc",
   "file": "/home/tom/NiLangV2.1/codegen/Visitor.cc"
 },
 {
   "directory": "/home/tom/NiLangV2.1/build/driver",
-  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/include -I/home/tom/NiLangV2.1/C:/LLVM/include    -o CMakeFiles/nilang.dir/main.cc.o -c /home/tom/NiLangV2.1/driver/main.cc",
+  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/llvm/include -I/home/tom/NiLangV2.1/llvm/build/include -I/home/tom/NiLangV2.1/include    -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++11 -o CMakeFiles/nilang.dir/main.cc.o -c /home/tom/NiLangV2.1/driver/main.cc",
   "file": "/home/tom/NiLangV2.1/driver/main.cc"
 },
 {
   "directory": "/home/tom/NiLangV2.1/build/parsing",
-  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/include -I/home/tom/NiLangV2.1/C:/LLVM/include    -o CMakeFiles/NilangParsing.dir/lexer.cc.o -c /home/tom/NiLangV2.1/build/parsing/lexer.cc",
+  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/llvm/include -I/home/tom/NiLangV2.1/llvm/build/include -I/home/tom/NiLangV2.1/include    -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++11 -o CMakeFiles/NilangParsing.dir/lexer.cc.o -c /home/tom/NiLangV2.1/build/parsing/lexer.cc",
   "file": "/home/tom/NiLangV2.1/build/parsing/lexer.cc"
 },
 {
   "directory": "/home/tom/NiLangV2.1/build/parsing",
-  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/include -I/home/tom/NiLangV2.1/C:/LLVM/include    -o CMakeFiles/NilangParsing.dir/parser.cc.o -c /home/tom/NiLangV2.1/build/parsing/parser.cc",
+  "command": "/usr/bin/c++   -I/home/tom/NiLangV2.1/llvm/include -I/home/tom/NiLangV2.1/llvm/build/include -I/home/tom/NiLangV2.1/include    -D_GNU_SOURCE -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -std=gnu++11 -o CMakeFiles/NilangParsing.dir/parser.cc.o -c /home/tom/NiLangV2.1/build/parsing/parser.cc",
   "file": "/home/tom/NiLangV2.1/build/parsing/parser.cc"
 }
 ]
