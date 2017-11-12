@@ -1,5 +1,9 @@
 #include "codegen/Visitor.h"
 
-Visitor::Visitor()
+class Parser;
+
+Visitor::Visitor(Parser &parser)
 {
 }
+
+
